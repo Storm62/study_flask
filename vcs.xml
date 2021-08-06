@@ -6,10 +6,6 @@
           <option name="url" value="https://github.com/Storm62/study_flask.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
-        <UrlAndUserName>
-          <option name="url" value="http://github.com" />
-          <option name="userName" value="storm62" />
-        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\storm\PycharmProjects" />
