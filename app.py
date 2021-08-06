@@ -7,6 +7,7 @@ import mysql.connector
 
 def log_request(req: 'flask_request', res: str) -> None:
     """Журналируем веб-запросы и возвращаем результаты."""
+
     # with open('vsearch.log', 'a') as log:
     # print(str(dir(req)), res, file=log)
     # print(req.form, file=log, end=' | ')
@@ -23,7 +24,10 @@ def log_request(req: 'flask_request', res: str) -> None:
     conn= mysql.connector.connect(**dbconfig)
     cursor = conn.cursor()
 
+    # не нужный в данный момент
     # with UseDatabase (dbconfig) as cursor:
+
+
     _SQL = """insert into log (phrase, letters, ip, browser_string, results) value (%s, %s, %s, %s, %s)"""
     cursor.execute(_SQL, (req.form['phrase'], req.form['letters'], req.remote_addr, req.user_agent.browser, res,))
     conn.commit()
